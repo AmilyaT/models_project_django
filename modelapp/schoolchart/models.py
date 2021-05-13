@@ -4,7 +4,7 @@ from datetime import datetime
 # I'm creating my first models here!.
 class Student(models.Model):
     full_name = models.CharField(max_length = 50)
-    year_of_graduation = models.DateField(default =datetime.today)
+    year_of_graduation = models.IntegerField()
     department = models.CharField(max_length= 50)
     grade = models.IntegerField()
     school = models.CharField(max_length = 50)
