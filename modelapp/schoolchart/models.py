@@ -5,10 +5,10 @@ from datetime import datetime
 class Student(models.Model):
     full_name = models.CharField(max_length = 50)
     year_of_graduation = models.IntegerField()
-    department = models.CharField(max_length= 50)
-    grade = models.IntegerField()
-    school = models.CharField(max_length = 50)
-    certifcate_type = models.CharField(max_length = 50)
+    department = models.ForeignKey(max_length= 50)
+    grade = models.ForeignKey()
+    school = models.ForeignKey(max_length = 50)
+    certifcate = models.ForeignKey(max_length = 50)
     
 
 class School(models.Model):
@@ -19,7 +19,7 @@ class Faculty(models.Model):
 
 class Department(models.Model):
     name = models.CharField(max_length = 50)
-    Faculty
+    faculty = models.ForeignKey(max_length = 50)
 
 class Certificate_Type(models.Model):
     name = models.CharField(max_length = 50)
