@@ -1,6 +1,4 @@
 from django.db import models
-
-
 from django.db.models.deletion import CASCADE
 
 # I'm creating my first models here!.
