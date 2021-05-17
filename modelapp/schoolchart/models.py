@@ -15,31 +15,27 @@ class Faculty(models.Model):
     
         name = models.CharField(max_length = 50)
         
-        def __init__(self):
-            return self.name
+        
 
 class Department(models.Model):
     
         name = models.CharField(max_length = 50)
         faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
 
-        def __init__(self):
-            return self.name
+        
 
 
 class Certificate_Type(models.Model):
     
         name = models.CharField(max_length = 50)
 
-        def __init__(self):
-            return self.name
+        
 
 
 class Grade(models.Model):
             
         grade_type = models.FloatField(max_length= 5)
-        def __init__(self):
-            return self.grade_type
+        
 
 class Student(models.Model):
     
@@ -51,7 +47,6 @@ class Student(models.Model):
         school = models.ForeignKey(School, on_delete=models.CASCADE)
         certifcate_type = models.ForeignKey(Certificate_Type, on_delete=models.CASCADE)
         
-        def __init__(self):
-            return self.full_name
+        
 
 
