@@ -3,15 +3,13 @@ from django.db.models.deletion import CASCADE
 from datetime import datetime
 
 # I'm creating my first models here!.
-class School(models.Model):
-     def __init__(self):
+class School(models.Model):     
         
         name = models.CharField(max_length = 50)
         address = models.CharField(max_length= 50)
         postal_code = models.IntegerField()
 
-        return self.name
-
+        
    
 class Faculty(models.Model):
     def __init__(self):
@@ -46,6 +44,7 @@ class Grade(models.Model):
 
 class Student(models.Model):
     def __init__(self):
+        
         full_name = models.CharField(max_length = 50)
         year_of_graduation = models.DateField(auto_now=datetime.year)
         department = models.ForeignKey(Department, on_delete=models.CASCADE)
