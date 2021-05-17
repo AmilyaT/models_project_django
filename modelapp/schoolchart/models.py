@@ -12,38 +12,37 @@ class School(models.Model):
         
    
 class Faculty(models.Model):
-    def __init__(self):
-        
+    
         name = models.CharField(max_length = 50)
-
-        return self.name
+        
+        def __init__(self):
+            return self.name
 
 class Department(models.Model):
-    def __init__(self):
-        
+    
         name = models.CharField(max_length = 50)
         faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
 
-        return self.name
+        def __init__(self):
+            return self.name
 
 
 class Certificate_Type(models.Model):
-    def __init__(self):
-        
+    
         name = models.CharField(max_length = 50)
 
-        return self.name
+        def __init__(self):
+            return self.name
 
 
 class Grade(models.Model):
-    def __init__(self):
-        
+            
         grade_type = models.FloatField(max_length= 5)
-    
-        return self.grade_type
+        def __init__(self):
+            return self.grade_type
 
 class Student(models.Model):
-    def __init__(self):
+    
         
         full_name = models.CharField(max_length = 50)
         year_of_graduation = models.DateField(auto_now=datetime.year)
@@ -51,7 +50,8 @@ class Student(models.Model):
         grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
         school = models.ForeignKey(School, on_delete=models.CASCADE)
         certifcate_type = models.ForeignKey(Certificate_Type, on_delete=models.CASCADE)
-
-        return self.full_name
+        
+        def __init__(self):
+            return self.full_name
 
 
